@@ -7,7 +7,7 @@ a batch of filtered probabilities <code>probs</code> of the same shape. For each
 <ol>
   <li>Convert logits to probabilities with softmax: \(p_{b,i} = \exp(z_{b,i}) / \sum_j \exp(z_{b,j})\).</li>
   <li>Find the maximum probability in the row: \(p^{\max}_b = \max_i p_{b,i}\).</li>
-  <li>Mask every token whose probability is below \(\text{min\_p} \cdot p^{\max}_b\) (set it to 0).</li>
+  <li>Mask every token whose probability is below \(\text{min_p} \cdot p^{\max}_b\) (set it to 0).</li>
   <li>Renormalize the surviving probabilities so they sum to 1.</li>
 </ol>
 <p>
@@ -36,7 +36,7 @@ adapting to how peaked or flat each distribution is.
 </p>
 <p>
   For row 0, \(\max z = 4\) so \(e = [e^{-3}, e^{-2}, e^{-1}, e^{0}] \approx [0.0498, 0.1353, 0.3679, 1.0000]\).
-  The first entry falls below the threshold \(\text{min\_p} = 0.1\) (note that \(e^{-3} / \sum e &lt; 0.1 \cdot e^{0} / \sum e\)),
+  The first entry falls below the threshold \(\text{min_p} = 0.1\) (note that \(e^{-3} / \sum e &lt; 0.1 \cdot e^{0} / \sum e\)),
   so it is masked. Renormalizing the rest gives row 0 of <code>probs</code>.
   For row 1, \(\max z = 1\) and the last entry is masked by the same reasoning.
 </p>

@@ -5,7 +5,7 @@
 <p>
   For each batch <code>b</code> and candidate <code>(k, v)</code>, the score is
   \[
-  \text{cand}[b, k, v] = \text{beam\_scores}[b, k] + \text{token\_logprobs}[b, k, v]
+  \text{cand}[b, k, v] = \text{beam_scores}[b, k] + \text{token_logprobs}[b, k, v]
   \]
   Per batch, the top <code>K</code> candidates by score are selected and written, sorted in descending order by score, into <code>new_beam_scores</code>. For each selected candidate, the originating beam index <code>k</code> is written to <code>parent_beam_indices</code> and the chosen vocabulary token <code>v</code> to <code>next_tokens</code>.
 </p>

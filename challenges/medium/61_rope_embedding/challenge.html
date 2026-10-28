@@ -5,13 +5,13 @@
 <p>
     Mathematically, given a query vector \(x\) and corresponding cosine and sine vectors, the operation is defined as:
     \[
-    \text{RoPE}(x) = x \odot \cos + \text{rotate\_half}(x) \odot \sin
+    \text{RoPE}(x) = x \odot \cos + \text{rotate_half}(x) \odot \sin
     \]
 </p>
 <p>
-    Where \(\odot\) denotes element-wise multiplication. The \(\text{rotate\_half}(x)\) operation swaps the first and second halves of the vector and negates the first half. For a vector of dimension \(d\):
+    Where \(\odot\) denotes element-wise multiplication. The \(\text{rotate_half}(x)\) operation swaps the first and second halves of the vector and negates the first half. For a vector of dimension \(d\):
     \[
-    \text{rotate\_half}([x_1, \dots, x_{d/2}, x_{d/2+1}, \dots, x_d]) = [-x_{d/2+1}, \dots, -x_d, x_1, \dots, x_{d/2}]
+    \text{rotate_half}([x_1, \dots, x_{d/2}, x_{d/2+1}, \dots, x_d]) = [-x_{d/2+1}, \dots, -x_d, x_1, \dots, x_{d/2}]
     \]
 </p>
 <h2>Implementation Requirements</h2>
